@@ -120,16 +120,8 @@ class TransactionController extends Controller
     public function update(Request $request, string $id)
     {
         $user = Auth::user();
-        $transaction = Transaction::with(['doctor', 'user'])->where('user_id', $user->id)->findOrFail($id);
+        $transaction = Transaction::with(['doctor', 'user'])->where('doctor_name', $user->name)->findOrFail($id);
         $validateData = Validator::make($request->all(), [
-            'user_id' => 'exists:users,id',
-            'doctor_id' => 'exists:doctors,id',
-            'doctor_name' => 'string',
-            'user_name' => 'string',
-            'doctor_image' => 'string',
-            'doctor_specialist' => 'string',
-            'disease_complaints' => 'required',
-            'no_phone' => 'required|numeric',
             'status' => 'string'
         ]);
 

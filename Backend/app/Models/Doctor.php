@@ -25,8 +25,7 @@ class Doctor extends Authenticatable
     ];
 
     protected $hidden = [
-        'password',
-        'role_id'
+        'password'
     ];
 
     /**

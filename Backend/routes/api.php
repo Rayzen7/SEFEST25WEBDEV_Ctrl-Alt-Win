@@ -56,6 +56,8 @@ Route::middleware('auth-token')->group(function() {
 
     Route::middleware('role:3')->group(function() {
         Route::get('/doctor/profile', [DoctorController::class, 'doctor']);
+        Route::get('/doctor/profile/{id}', [DoctorController::class, 'show']);
+        Route::post('/doctor/profile/{id}', [DoctorController::class, 'doctorupdate']);
 
         Route::put('/doctor/transaction/{id}', [TransactionController::class, 'update']);
         Route::get('/doctor/transaction', [TransactionController::class, 'doctor']);

@@ -25,6 +25,9 @@ import History from '../views/consultation/History.jsx';
 import DashboardDoctor from '../views/admin/DashboardDoctor.jsx';
 import AddDoctor from '../views/admin/AddDoctor.jsx';
 import EditDoctor from '../views/admin/EditDoctor.jsx';
+import DoctorDashboard from '../views/doctor/DoctorDashboard.jsx';
+import DoctorProfile from '../views/doctor/Profile.jsx';
+import UpdateDoctor from '../views/doctor/UpdateDoctor.jsx';
 
 const Router = () => {
   return (
@@ -56,6 +59,11 @@ const Router = () => {
             <Route path='/Admin/Doctor' element={<DashboardDoctor/>}/>
             <Route path='/Admin/Doctor/Add' element={<AddDoctor/>}/>
             <Route path='/Admin/Doctor/Edit/:id' element={<EditDoctor/>}/>
+
+            {/* Doctor */}
+            <Route path='/Doctor/Dashboard' element={<DoctorDashboard/>}/>
+            <Route path='/Doctor/Profile' element={<DoctorProfile/>}/>
+            <Route path='/Doctor/Profile/:id' element={<UpdateDoctor/>}/>
 
             {/* Auth */}
             <Route path='/Login' element={<Login/>}/>

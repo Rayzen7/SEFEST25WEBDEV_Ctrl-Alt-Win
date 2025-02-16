@@ -95,22 +95,22 @@ const Satybot = () => {
                             </h1>
                             <div className="flex justify-start gap-4 items-center mt-4">
                                 <button
-                                    onClick={() => handleAsk('What can I ask you to do?')}
+                                    onClick={() => handleAsk('How can I improve my mental health?')}
                                     className='font-poppins1 bg-white lg:px-2 p-2 rounded-md cursor-pointer lg:py-3 lg:rounded-full text-[8px] lg:text-[12px]'
                                 >
-                                    What can I ask you to do?
+                                    How can I improve my mental health?
                                 </button>
                                 <button
-                                    onClick={() => handleAsk('How can you help me with my project?')}
+                                    onClick={() => handleAsk('What are some ways to reduce stress?')}
                                     className='font-poppins1 bg-white lg:px-2 p-2 rounded-md cursor-pointer lg:py-3 lg:rounded-full text-[8px] lg:text-[12px]'
                                 >
-                                    How can you help me with my project?
+                                    What are some ways to reduce stress?
                                 </button>
                                 <button
-                                    onClick={() => handleAsk('Tell me about your capabilities')}
+                                    onClick={() => handleAsk('How can I stop overthinking?')}
                                     className='font-poppins1 bg-white lg:px-2 p-2 rounded-md cursor-pointer lg:py-3 lg:rounded-full text-[8px] lg:text-[12px]'
                                 >
-                                    Tell me about your capabilities
+                                    How can I stop overthinking?
                                 </button>
                             </div>
                         </>

@@ -142,6 +142,40 @@ class DoctorController extends Controller
         ], 200);
     }
 
+    public function doctorupdate(Request $request, string $id)
+    {
+        $doctor = Doctor::findOrFail($id);
+        $validateData = Validator::make($request->all(), [
+            'name' => 'required',
+            'password' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg'
+        ]);
+
+        if ($validateData->fails()) {
+            return response()->json([
+                'message' => 'Invalid Field'
+            ], 401);
+        }
+
+        if ($request->hasFile('image')) {
+            if ($request->image) {
+                Storage::delete('public' . $doctor->image);
+            }
+
+            $image = $request->file('image')->store('doctor', 'public');
+            $doctor->image = $image;
+        }
+
+        $doctor->update([
+            'name' => $request->name,
+            'password' => bcrypt($request->password)
+        ]);
+
+        return response()->json([
+            'message' => 'update doctor success'
+        ], 200);
+    }
+
     /**
      * Remove the specified resource from storage.
      */
