@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Http\Request;
@@ -36,6 +38,27 @@ Route::middleware('auth-token')->group(function() {
         Route::get('/category', [CategoryController::class, 'index']);
         Route::post('/category', [CategoryController::class, 'store']);
         Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
+
+        Route::get('/admin/doctor', [DoctorController::class, 'index']);
+        Route::get('/admin/doctor/{id}', [DoctorController::class, 'show']);
+        Route::post('/admin/doctor', [DoctorController::class, 'store']);
+        Route::post('/admin/doctor/{id}', [DoctorController::class, 'update']);
+        Route::delete('/admin/doctor/{id}', [DoctorController::class, 'destroy']);
+    });
+
+    Route::middleware('role:2')->group(function() {
+        Route::post('/user/transaction', [TransactionController::class, 'store']);
+        Route::get('/user/transaction', [TransactionController::class, 'user']);
+        Route::get('/user/transaction/{id}', [TransactionController::class, 'show']);
+        Route::get('/user/doctor', [DoctorController::class, 'index']);
+        Route::get('/user/doctor/{id}', [DoctorController::class, 'show']);
+    });
+
+    Route::middleware('role:3')->group(function() {
+        Route::get('/doctor/profile', [DoctorController::class, 'doctor']);
+
+        Route::put('/doctor/transaction/{id}', [TransactionController::class, 'update']);
+        Route::get('/doctor/transaction', [TransactionController::class, 'doctor']);
     });
 
 });

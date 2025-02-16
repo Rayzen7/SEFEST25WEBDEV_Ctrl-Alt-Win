@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import NavbarAdmin from '../../components/admin/NavbarAdmin'
+import NavbarAdmin from '../../components/Admin/NavbarAdmin'
 import axios from 'axios';
 
 const DashboardMessage = () => {

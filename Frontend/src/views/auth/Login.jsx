@@ -34,7 +34,11 @@ const Login = () => {
                 setTimeout(() => {
                     navigate('/Admin/Education');
                 }, 3000);
-            } else if (userRole === 2) {
+            } else if (userRole === 3) {
+                setTimeout(() => {
+                    navigate('/Doctor/Dashboard');
+                }, 3000);
+            } else {
                 setTimeout(() => {
                     navigate('/');
                 }, 3000);

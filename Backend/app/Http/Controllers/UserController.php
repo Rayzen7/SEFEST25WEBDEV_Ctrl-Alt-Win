@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -75,16 +76,28 @@ class UserController extends Controller
             ], 401);
         }
 
-        $email = User::where('email', $request->email)->first();
+        $emailUser = User::where('email', $request->email)->first();
+        $emailDoctor = Doctor::where('email', $request->email)->first();
+
         if (Auth::attempt($request->only('email', 'password'))) {
-            $token = $email->createToken('access_token')->plainTextToken;
             $user = Auth::user();
+            $token = $emailUser->createToken('access_token')->plainTextToken;
             return response()->json([
                 'message' => 'Login Success',
                 'token' => $token,
                 'user' => $user
             ], 200);
-        }
+        }            
+
+        if (Auth::guard('doctors')->attempt($request->only(['email', 'password']))) {
+            $user = Auth::guard('doctors')->user();
+            $token = $emailDoctor->createToken('access_token')->plainTextToken;
+            return response()->json([
+                'message' => 'Login Success',
+                'token' => $token,
+                'user' => $user
+            ], 200);
+        } 
 
         return response()->json([
             'message' => 'Email/Password Invalid Credentials'

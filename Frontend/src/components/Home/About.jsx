@@ -11,7 +11,7 @@ const About = () => {
                 <p className='font-poppins1 lg:text-[22px] text-[14px]'>Why?</p>
                 <h1 className='font-poppins lg:text-[40px] lg:pt-5 pt-2 text-[14px]'>Why Our Mental Health Consultants are <br className='lg:block hidden'/> the Best Choice</h1>
             </div>
-            <img src={robot3} alt="" className='lg:w-[150px] w-0 h-auto absolute right-0 top-[210%]' data-aos="fade-up" data-aos-duration="800" />
+            <img src={robot3} alt="" className='lg:w-[150px] w-0 h-auto absolute right-0 top-[280%]' data-aos="fade-up" data-aos-duration="800" />
         </div>
         <div className='lg:mt-[160px] mt-[100px]'>
             <div className='flex lg:flex-row flex-col lg:space-y-0 space-y-24 lg:px-20 justify-around items-center' data-aos="fade-up" data-aos-duration="800">

@@ -18,7 +18,10 @@ class RoleSeeder extends Seeder
             ],
             [
                 'name' => 'user'
-            ]
+            ],
+            [
+                'name' => 'doctor'
+            ],
         ]);
     }
 }

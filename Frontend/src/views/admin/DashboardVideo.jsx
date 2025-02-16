@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import NavbarAdmin from '../../components/admin/NavbarAdmin'
+import NavbarAdmin from '../../components/Admin/NavbarAdmin'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';

@@ -19,6 +19,9 @@ import AddCategory from '../views/admin/AddCategory.jsx';
 import DashboardArticle from '../views/admin/DashboardArticle.jsx';
 import AddArticle from '../views/admin/AddArticle.jsx';
 import EditArticle from '../views/admin/EditArticle.jsx';
+import Consultation from '../views/consultation/Consultation.jsx';
+import DoctorID from '../views/consultation/DoctorID.jsx';
+import History from '../views/consultation/History.jsx';
 
 const Router = () => {
   return (
@@ -33,6 +36,9 @@ const Router = () => {
             <Route path='/Satybot' element={<Satybot/>}/>
             <Route path='/Mood-Detection' element={<MoodDetection/>}/>
             <Route path='/Result' element={<ResultMood/>}/>
+            <Route path='/Consultation' element={<Consultation/>}/>
+            <Route path='/Consultation/Doctor/:id' element={<DoctorID/>}/>
+            <Route path='/History' element={<History/>}/>
 
             {/* Admin */}
             <Route path='/Admin/Education' element={<DashboardVideo/>}/>
