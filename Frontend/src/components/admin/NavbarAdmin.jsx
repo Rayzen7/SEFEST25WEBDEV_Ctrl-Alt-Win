@@ -72,11 +72,11 @@ const NavbarAdmin = () => {
         <div className={`w-[280px] fixed h-[100vh] z-20 transition-all duration-700 overflow-hidden bg-white ${open ? "translate-x-0" : "-translate-x-[100%]"}`}>
             <div className="flex flex-col justify-between items-center h-full py-7">
                 <div onClick={() => setOpen(false)} className="flex justify-center items-center gap-4 cursor-pointer">
-                    <img src={logo} alt="" className='w-[35px] h-auto' />
+                    <img src={logo} alt="" className='w-[25px] h-auto' />
                     <h1 className='font-poppins text-purple text-[18px]'>SatyGuard</h1>
                 </div>
                 <div className="flex justify-center flex-col items-center gap-4">
-                    <i className='bx bxs-user text-[30px] bg-purple text-white p-5 rounded-full'></i>
+                    <i className='bx bxs-user text-[25px] bg-purple text-white p-4 rounded-full'></i>
                     <div className="text-center">
                         <h1 className='font-poppins text-[#353535] text-[18px]'>{admin.name}</h1>
                         <h1 className='font-poppins1 text-[14px] text-[#737373]'>{admin.email}</h1>
@@ -96,6 +96,13 @@ const NavbarAdmin = () => {
                             <i className={`bx bxs-news group-hover:text-white text-purple text-[20px] ${location.pathname === '/Admin/Article' ? 'text-white' : ''}`}></i>
                             <p className={`font-poppins text-purple text-[16px] group-hover:text-white ${location.pathname === '/Admin/Article' ? 'text-white' : ''}`}>Article</p>
                             <i className={`bx bx-chevron-right text-[25px] text-purple group-hover:text-white ${location.pathname === '/Admin/Article' ? 'text-white' : ''}`}></i>
+                        </div>
+                    </Link>
+                    <Link to='/Admin/Doctor'>
+                        <div className={`flex justify-between items-center px-8 group transition-all duration-200 hover:bg-purple h-[65px] cursor-pointer ${location.pathname === '/Admin/Doctor' ? 'bg-purple' : ''}`}>
+                            <i className={`bx bx-plus-medical group-hover:text-white text-purple text-[20px] ${location.pathname === '/Admin/Doctor' ? 'text-white' : ''}`}></i>
+                            <p className={`font-poppins text-purple text-[16px] group-hover:text-white ${location.pathname === '/Admin/Doctor' ? 'text-white' : ''}`}>Doctor</p>
+                            <i className={`bx bx-chevron-right text-[25px] text-purple group-hover:text-white ${location.pathname === '/Admin/Doctor' ? 'text-white' : ''}`}></i>
                         </div>
                     </Link>
                     <Link to='/Admin/Category'>

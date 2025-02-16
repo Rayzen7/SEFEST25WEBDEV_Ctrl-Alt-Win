@@ -16,19 +16,25 @@ class TransactionController extends Controller
     public function user()
     {
         $user = Auth::user();
-        Transaction::where('user_id', $user->id)->where('created_at', '<', now()->subHours(24))->update(['doctor_id' => null]);
-        $transaction = Transaction::with('doctor', 'user')->get()
+        Transaction::where('user_id', $user->id)
+            ->where('created_at', '<', now()->subHours(24))
+            ->update(['doctor_id' => null]);
+    
+        $transaction = Transaction::where('user_id', $user->id)
+            ->with('doctor', 'user')
+            ->get()
             ->map(function ($transaction) {
                 if ($transaction->doctor_id === null) {
                     unset($transaction->doctor);
                 }
-
                 return $transaction;
             });
+    
         return response()->json([
             'transaction' => $transaction
         ], 200);
     }
+    
 
     public function doctor()
     {

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('user_name');
             $table->string('doctor_image');
             $table->string('doctor_specialist');
-            $table->string('disease_complaints');
+            $table->text('disease_complaints');
             $table->string('no_phone');
             $table->enum('status', ['pending', 'accepted'])->default('pending');
             $table->timestamps();

@@ -22,6 +22,9 @@ import EditArticle from '../views/admin/EditArticle.jsx';
 import Consultation from '../views/consultation/Consultation.jsx';
 import DoctorID from '../views/consultation/DoctorID.jsx';
 import History from '../views/consultation/History.jsx';
+import DashboardDoctor from '../views/admin/DashboardDoctor.jsx';
+import AddDoctor from '../views/admin/AddDoctor.jsx';
+import EditDoctor from '../views/admin/EditDoctor.jsx';
 
 const Router = () => {
   return (
@@ -50,6 +53,9 @@ const Router = () => {
             <Route path='/Admin/Article' element={<DashboardArticle/>}/>
             <Route path='/Admin/Article/Add' element={<AddArticle/>}/>
             <Route path='/Admin/Article/Edit/:id' element={<EditArticle/>}/>
+            <Route path='/Admin/Doctor' element={<DashboardDoctor/>}/>
+            <Route path='/Admin/Doctor/Add' element={<AddDoctor/>}/>
+            <Route path='/Admin/Doctor/Edit/:id' element={<EditDoctor/>}/>
 
             {/* Auth */}
             <Route path='/Login' element={<Login/>}/>

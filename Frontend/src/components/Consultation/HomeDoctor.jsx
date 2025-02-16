@@ -62,11 +62,11 @@ const HomeDoctor = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
             </div>
-            <div className="mt-20 flex justify-center flex-wrap items-center gap-6">
+            <div className="mt-20 flex justify-center flex-wrap items-start gap-10">
                 {filteredDoctors.length > 0 ? (
                     filteredDoctors.map((doctors) => (
                         <div className="bg-[#f0f0f0] p-6 rounded-xl w-[350px] flex justify-center items-start flex-col" key={doctors.id}>
-                            <img src={`http://localhost:8000/storage/${doctors.image}`} alt="" className='w-full h-auto rounded-md' />
+                            <img src={`http://localhost:8000/storage/${doctors.image}`} alt="" className='w-[300px] h-[300px] rounded-md' />
                             <div className="mt-4">
                                 <h1 className='font-poppins1 text-[22px]'>{doctors.name}</h1>
                                 <p className='font-poppins2 pt-1 text-[12px] text-justify text-[#6C87AE]'>{doctors.desc}</p>
