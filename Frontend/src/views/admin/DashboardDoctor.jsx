@@ -91,9 +91,11 @@ const DashboardDoctor = () => {
                                 <td className='font-poppins1 py-8 text-[12px] px-[10px]'>{doctors.specialist}</td>
                                 <td className='font-poppins1 py-8 text-[12px] px-[10px]'>{doctors.email}</td>
                                 <td className='font-poppins1 py-8 text-[12px] px-[10px]'>{doctors.no_phone}</td>
-                                <td className='flex py-[55px] justify-center px-[15px] items-center gap-5'>
-                                    <button onClick={() => handleEdit(doctors.id)} className='bg-blue hover:bg-blueHover text-white px-7 rounded-md py-3 font-poppins1 text-[12px]'>Edit</button>
-                                    <button onClick={() => handleDelete(doctors.id)} className='bg-red hover:bg-redHover text-white px-7 rounded-md py-3 font-poppins1 text-[12px]'>Delete</button>
+                                <td className='align-middle px-[15px] items-center gap-5'>
+                                    <div className="inline-flex gap-4">
+                                        <button onClick={() => handleEdit(doctors.id)} className='bg-blue hover:bg-blueHover text-white px-7 rounded-md py-3 font-poppins1 text-[12px]'>Edit</button>
+                                        <button onClick={() => handleDelete(doctors.id)} className='bg-red hover:bg-redHover text-white px-7 rounded-md py-3 font-poppins1 text-[12px]'>Delete</button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}

@@ -82,7 +82,7 @@ const AddArticle = () => {
                     <label className='font-poppins1 text-[16px]'>Link Article :</label>
                     <input 
                       type="text" 
-                      placeholder='Link Video'
+                      placeholder='Link Article'
                       required
                       value={link}
                       onChange={(e) => setLink(e.target.value)}

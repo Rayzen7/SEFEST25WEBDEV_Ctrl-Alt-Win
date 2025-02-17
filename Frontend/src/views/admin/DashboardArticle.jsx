@@ -83,7 +83,7 @@ const DashboardArticle = () => {
                             <tr key={index}>
                                 <td className='font-poppins1 py-8 text-[12px] px-[15px]'>{index + 1}</td>
                                 <td className='font-poppins1 py-8 px-[15px]'>
-                                    <img src={`http://localhost:8000/storage/${articles.image}`} alt="" className='h-auto w-[300px]' />
+                                    <img src={`http://localhost:8000/storage/${articles.image}`} alt="" className='h-[110px] w-[300px] rounded-md' />
                                 </td>                                
                                 <td className='font-poppins1 py-8 text-[12px] px-[15px]'>{articles.title}</td>
                                 <td className='font-poppins1 py-8 text-[12px] px-[15px]' >
@@ -93,9 +93,11 @@ const DashboardArticle = () => {
                                         </div>
                                     ))}
                                 </td>
-                                <td className='flex py-[35px] justify-center px-[15px] items-center gap-5'>
-                                    <button onClick={() => handleEdit(articles.id)} className='bg-blue hover:bg-blueHover text-white px-7 rounded-md py-3 font-poppins1 text-[12px]'>Edit</button>
-                                    <button onClick={() => handleDelete(articles.id)} className='bg-red hover:bg-redHover text-white px-7 rounded-md py-3 font-poppins1 text-[12px]'>Delete</button>
+                                <td className='align-middle px-[15px] items-center gap-5'>
+                                    <div className="inline-flex gap-4">
+                                        <button onClick={() => handleEdit(articles.id)} className='bg-blue hover:bg-blueHover text-white px-7 rounded-md py-3 font-poppins1 text-[12px]'>Edit</button>
+                                        <button onClick={() => handleDelete(articles.id)} className='bg-red hover:bg-redHover text-white px-7 rounded-md py-3 font-poppins1 text-[12px]'>Delete</button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}

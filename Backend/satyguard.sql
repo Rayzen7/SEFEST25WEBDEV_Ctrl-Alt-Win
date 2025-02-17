@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 17 Feb 2025 pada 04.13
+-- Waktu pembuatan: 17 Feb 2025 pada 14.27
 -- Versi server: 8.0.30
 -- Versi PHP: 8.3.11
 
@@ -43,7 +43,9 @@ CREATE TABLE `articles` (
 
 INSERT INTO `articles` (`id`, `image`, `title`, `desc`, `link`, `created_at`, `updated_at`) VALUES
 (8, 'article/ZK0UmQJ0e6PaoDbnpk8uZTYCSpOKN2dIIeFmzk2F.png', '\'Micro-Retiring\' for Mental Health Is a \nGen Z Trend', 'Extended breaks from work may offer some mental health benefits but could bring financial woes down the road, experts say', 'https://people.com/micro-retiring-for-mental-health-gen-z-benefits-finances-8783217', '2025-02-07 00:55:42', '2025-02-07 00:55:42'),
-(18, 'article/hQ2qWtvJCfrkWqIpLYiZIQ9d6RdggVVPDUMUX3ym.jpg', 'What 2024 Taught Us: Trends to Shape Your 2025 Mental Health Strategy', 'Discover key mental health insights from 2024 to guide your 2025 strategy. Learn how to tackle talent challenges, boost retention, and foster resilience with actionable trends.', 'https://www.modernhealth.com/post/2024-learnings-for-2025-mental-health-strategy', '2025-02-08 11:35:10', '2025-02-10 07:19:32');
+(18, 'article/hQ2qWtvJCfrkWqIpLYiZIQ9d6RdggVVPDUMUX3ym.jpg', 'What 2024 Taught Us: Trends to Shape Your 2025 Mental Health Strategy', 'Discover key mental health insights from 2024 to guide your 2025 strategy. Learn how to tackle talent challenges, boost retention, and foster resilience with actionable trends.', 'https://www.modernhealth.com/post/2024-learnings-for-2025-mental-health-strategy', '2025-02-08 11:35:10', '2025-02-10 07:19:32'),
+(35, 'article/1OvALHf9jVkDUZGdjwzlP79ovWDuSBtF4IseICVJ.png', 'Mental Health, Key to Facing Global Uncertainty', 'Economic, social, political, technological and ecological pressures are now a burden on life. The combination of various pressures affects mental health/psychology', 'https://www.kompas.id/baca/english/2024/04/16/en-kesehatan-mental-kunci-hadapi-ketidakpastian-global', '2025-02-17 06:55:20', '2025-02-17 06:55:20'),
+(36, 'article/1Rp0vHHXqG2eKuZzoVphuvAPhelKg6BSpQHiBHFb.png', 'Therapy dogs help first-year students cope with stress, depression, and anxiety', 'In a recent study published in Pets, researchers explored how access to therapy dogs affected the mental health of university students in their first year of study.', 'https://www.news-medical.net/news/20250217/Therapy-dogs-help-first-year-students-cope-with-stress-depression-and-anxiety.aspx', '2025-02-17 07:09:29', '2025-02-17 07:09:29');
 
 -- --------------------------------------------------------
 
@@ -68,7 +70,12 @@ INSERT INTO `article_categories` (`article_id`, `category_id`, `created_at`, `up
 (8, 3, NULL, NULL),
 (18, 1, NULL, NULL),
 (18, 2, NULL, NULL),
-(18, 3, NULL, NULL);
+(18, 3, NULL, NULL),
+(35, 2, NULL, NULL),
+(35, 5, NULL, NULL),
+(36, 2, NULL, NULL),
+(36, 6, NULL, NULL),
+(36, 7, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -114,7 +121,10 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Micro Retiring', NULL, NULL),
 (2, 'Mental Health', NULL, NULL),
-(3, 'Gen Z', NULL, NULL);
+(3, 'Gen Z', NULL, NULL),
+(5, 'Social', '2025-02-17 06:53:51', '2025-02-17 06:53:51'),
+(6, 'Anxiety', '2025-02-17 07:08:19', '2025-02-17 07:08:19'),
+(7, 'Depression', '2025-02-17 07:08:36', '2025-02-17 07:08:36');
 
 -- --------------------------------------------------------
 
@@ -219,7 +229,7 @@ CREATE TABLE `messages` (
 
 INSERT INTO `messages` (`id`, `name`, `email`, `message`, `created_at`, `updated_at`) VALUES
 (1, 'Granha Steven', 'granha@gmail.com', 'Thank you for creating this space! The content is insightful and really helps in understanding mental health better.', '2025-02-07 23:33:05', '2025-02-07 23:33:05'),
-(5, 'Sofia Alexana', 'aselole@rmail.com', 'The website is easy to navigate and provides comforting messages. Maybe adding more interactive features could enhance user experience!', '2025-02-09 19:47:55', '2025-02-09 19:47:55');
+(5, 'Sofia Alexana', 'alexana@rmail.com', 'The website is easy to navigate and provides comforting messages. Maybe adding more interactive features could enhance user experience!', '2025-02-09 19:47:55', '2025-02-09 19:47:55');
 
 -- --------------------------------------------------------
 
@@ -348,8 +358,8 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`id`, `doctor_id`, `user_id`, `doctor_name`, `user_name`, `doctor_image`, `doctor_specialist`, `disease_complaints`, `no_phone`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 3, 'Dr. William Atmadja Sp.KJ', 'user1', 'doctor/3opQceioIm8cBSDveXWFyuNf4ZWjSRbceUYXWOm4.png', 'Mental Health', 'I often feel anxious for no clear reason, and it makes it hard for me to focus on daily tasks. At night, I struggle to sleep because my mind keeps overthinking everything. Sometimes, I feel emotionally drained, even when nothing significant has happened. These feelings make me doubt myself and affect my overall well-being.', '+6281219538787', 'accepted', '2025-02-16 01:02:55', '2025-02-16 04:15:01'),
-(2, 2, 5, 'Karina M.Psi', 'user2', 'doctor/zMpGW9kRsplXOFpMi7QrS2iCpLnit3718TNhKngv.png', 'Mental Health', 'Lately, I’ve been feeling unmotivated and exhausted, even after a full night\'s sleep. Simple tasks feel overwhelming, and I find myself withdrawing from friends and family. My emotions fluctuate between sadness and frustration, and I don’t know how to explain it to others.', '+6281219538787', 'pending', '2025-02-16 02:46:10', '2025-02-16 02:46:10');
+(1, NULL, 3, 'Dr. William Atmadja Sp.KJ', 'user1', 'doctor/3opQceioIm8cBSDveXWFyuNf4ZWjSRbceUYXWOm4.png', 'Mental Health', 'I often feel anxious for no clear reason, and it makes it hard for me to focus on daily tasks. At night, I struggle to sleep because my mind keeps overthinking everything. Sometimes, I feel emotionally drained, even when nothing significant has happened. These feelings make me doubt myself and affect my overall well-being.', '+6281219538787', 'accepted', '2025-02-16 01:02:55', '2025-02-17 07:17:55'),
+(2, NULL, 5, 'Karina M.Psi', 'user2', 'doctor/zMpGW9kRsplXOFpMi7QrS2iCpLnit3718TNhKngv.png', 'Mental Health', 'Lately, I’ve been feeling unmotivated and exhausted, even after a full night\'s sleep. Simple tasks feel overwhelming, and I find myself withdrawing from friends and family. My emotions fluctuate between sadness and frustration, and I don’t know how to explain it to others.', '+6281219538787', 'accepted', '2025-02-16 02:46:10', '2025-02-17 07:26:56');
 
 -- --------------------------------------------------------
 
@@ -398,7 +408,9 @@ CREATE TABLE `videos` (
 
 INSERT INTO `videos` (`id`, `video`, `title`, `desc`, `created_by`, `created_at`, `updated_at`) VALUES
 (1, 'https://www.youtube.com/embed/lh068GG3N98?si=svdquSgOzXlE_1Hf', 'All In This Together - Mental Health Awareness Month', 'In honor of Mental Health Awareness Month, Compass Health Network wants to remind everyone that our brains are just like any other organ in our bodies. When you\'re feeling out of balance, it is OKAY to seek professional help. Our minds and bodies are connected, so we really are \"All In This Together.\"', 'Compass Health', '2025-02-09 23:19:40', '2025-02-09 23:19:40'),
-(2, 'https://www.youtube.com/embed/AzZpiZPxvq0?si=2HYLr5ZR4Kjx2_bB', 'What’s on your mind? I UNICEF', 'Opening up about your struggles with someone you trust can help you feel better.  UNICEF has teamed up with Lennnie on our #OnMyMind campaign, when there’s a lot on your mind it can be hard to open up, but it\'s the first step to getting the help you may need. It starts with one moment, one conversation, one question: What’s on your mind?', 'UNICEF', '2025-02-09 23:26:07', '2025-02-09 23:26:07');
+(2, 'https://www.youtube.com/embed/AzZpiZPxvq0?si=2HYLr5ZR4Kjx2_bB', 'What’s on your mind? I UNICEF', 'Opening up about your struggles with someone you trust can help you feel better.  UNICEF has teamed up with Lennnie on our #OnMyMind campaign, when there’s a lot on your mind it can be hard to open up, but it\'s the first step to getting the help you may need. It starts with one moment, one conversation, one question: What’s on your mind?', 'UNICEF', '2025-02-09 23:26:07', '2025-02-09 23:26:07'),
+(6, 'https://www.youtube.com/embed/YxB2PXStAkE?si=_u01sP2zx3Geooxs', 'Borderline Personality Disorder vs Bipolar Disorder – How to tell the difference', 'Nearly two-thirds of individuals with bipolar disorder have been misdiagnosed at some point in their lives, and they visit nearly four physicians on average before receiving a definitive bipolar diagnosis.', 'Psych2Go', '2025-02-17 07:21:35', '2025-02-17 07:21:35'),
+(7, 'https://www.youtube.com/embed/FQ0IoPN8Yrs?si=yjTzUNbvFU0NcjzR', '9 Things About Borderline Personality Disorder You Need to Know', 'Borderline personality disorder (BPD) is a personality disorder marked by a pattern of ongoing instability in moods, behavior, self-image, and functioning.', 'Psych2Go', '2025-02-17 07:22:41', '2025-02-17 07:23:09');
 
 --
 -- Indexes for dumped tables
@@ -526,19 +538,19 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT untuk tabel `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -568,7 +580,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT untuk tabel `roles`
@@ -580,7 +592,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT untuk tabel `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
@@ -592,7 +604,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

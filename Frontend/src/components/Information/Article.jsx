@@ -34,8 +34,8 @@ const Article = () => {
         <div className="flex lg:flex-row flex-col justify-center items-center mt-5 lg:flex-wrap gap-10">
             {article.map((articles) => (
                 <a href={articles.link} target='_blank' className="" key={articles}>
-                    <div className="bg-gray1 w-[300px] lg:w-[450px] hover:-translate-y-4 transition-all duration-300 h-auto lg:h-[520px] lg:py-0 py-6 p-3 flex flex-col gap-4 items-center justify-center rounded-xl cursor-pointer" >
-                        <img className='lg:w-[410px] w-[270px] h-auto' src={`http://localhost:8000/storage/${articles.image}`} alt="" />
+                    <div className="bg-gray1 w-[300px] lg:w-[450px] hover:-translate-y-4 transition-all duration-300 h-auto lg:min-h-[520px] lg:py-6 py-6 p-3 flex flex-col gap-4 items-center justify-start rounded-xl cursor-pointer" >
+                        <img className='lg:w-[410px] w-[270px] rounded-md lg:h-[250px]' src={`http://localhost:8000/storage/${articles.image}`} alt="" />
                         <div className="flex flex-col gap-3">
                             <h1 className='px-3 font-poppins1 text-[16px] lg:text-[20px]'>{articles.title}</h1>
                             <p className='px-3 font-poppins2 text-[12px] lg:text-[14px] text-justify'>{articles.desc}</p>
