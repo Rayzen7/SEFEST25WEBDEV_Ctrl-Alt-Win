@@ -164,3 +164,14 @@ python mood-detection.py
 </p>
 
 <img src="./Readme/video/video-4.gif" width="550"/>
+
+<p align="justify">
+    🔹 <strong>Consultasion</strong> <br/>
+    Di fitur Consultation, user bisa menghubungi dokter untuk konsultasi kesehatan mental.
+    Pengguna dapat terlebih dahulu memesan konsultasi kepada dokter, dan jika dokter sudah accept permintaan pengguna
+    maka pengguna dapat berkonsultasi langsung dengan dokter<br/>
+    - <strong>NOTE: </strong> <br/>
+    Pengguna harus login terlebih dahulu sebelum bisa menggunakan fitur ini
+</p>
+
+<img src="./Readme/video/video-5.gif" width="550"/>
