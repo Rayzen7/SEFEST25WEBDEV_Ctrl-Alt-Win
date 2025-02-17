@@ -28,7 +28,7 @@ const Video = () => {
                 </span>
             </h1>
         </div>
-        <div className="flex lg:flex-row flex-col justify-center items-center mt-5 lg:flex-wrap gap-10">
+        <div className="flex lg:flex-row flex-col justify-center items-start mt-5 lg:flex-wrap gap-10">
             {video.map((videos) => (
                 <div key={videos.id} className="bg-gray1 w-[300px] lg:w-[450px] hover:-translate-y-4 transition-all duration-300 h-auto py-6 p-3 flex flex-col gap-4 items-center justify-center rounded-xl cursor-pointer" >
                     <iframe className='lg:w-[410px] w-[270px] lg:h-[250px] h-[200px] rounded-lg' src={videos.video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
