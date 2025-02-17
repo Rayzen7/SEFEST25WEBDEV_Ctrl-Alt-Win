@@ -32,6 +32,10 @@ SatyGuard adalah platform digital yang dirancang untuk memberikan perlindungan d
     Untuk menjalankan Website pastikan seluruh kode baik frontend, backend, dan machine learning dapat berjalan dengan baik
 </p>
 
+```sh 
+git clone https://github.com/Rayzen7/SEFEST25WEBDEV_Ctrl-Alt-Win.git
+```
+
 ### 1️⃣ Menjalankan Kode Frontend  
 <p align="justify">
     Untuk menjalankan kode Frontend. Masuk ke dalam folder Frontend dengan mengetikkan path berikut
