@@ -145,7 +145,8 @@ python mood-detection.py
 
 <p align="justify">
     🔹 <strong>Fitur Satybot dan Mood Detection</strong> <br/>
-    Di fitur Satybot, pengguna dapat menggunakan AI Chatbot dari SatyGuard untuk mencari informasi, meminta saran, curhat, dan lain sebagainya. Fitur Mood Detection, pengguna dapat mengetahui moodnya dengan cara pengguna mengetikkan sebuah teks mengenai perasaan yang sedang dialaminya. Setelah pengguna mengetikkan teksnya, maka hasil dari AI tersebut akan muncul dan jika mood pengguna sedang tidak baik-baik aja maka AI tersebut akan memberikan saran kepada pengguna supaya kondisi mood pengguna dapat membaik.
+    Di fitur Satybot, pengguna dapat menggunakan AI Chatbot dari SatyGuard untuk mencari informasi, meminta saran, curhat, dan lain sebagainya. <br/>    
+    Fitur Mood Detection, pengguna dapat mengetahui moodnya dengan cara pengguna mengetikkan sebuah teks mengenai perasaan yang sedang dialaminya. Setelah pengguna mengetikkan teksnya, maka hasil dari AI tersebut akan muncul dan jika mood pengguna sedang tidak baik-baik aja maka AI tersebut akan memberikan saran kepada pengguna supaya kondisi mood pengguna dapat membaik.
 </p>
 
 <img src="./Readme/video/video-3.gif" width="550"/>
@@ -153,12 +154,13 @@ python mood-detection.py
 <p align="justify">
     🔹 <strong>Panel Admin</strong> <br/>
     - Untuk akun pengguna yang kami sediakan adalah: Email: admin1@gmail.com | Password: admin1 <br/>
-    Di dalam Panel Admin, Admin bisa mengatur isi dari Artikel, Video, Kategori Artikel, dan Pesan. Panel Admin juga dilengkapi sistem middleware Role, jadi jika user yang bukan admin mencoba masuk ke panel admin maka akan langsung diarahkan ke Login page kembali. <br/>
+    Di dalam Panel Admin, Admin bisa mengatur isi dari Artikel, Video, Kategori Artikel, dan Pesan. Selain itu Admin juga bisa mengatur akun dari Dokter. Panel Admin juga dilengkapi sistem middleware Role, jadi jika user yang bukan admin mencoba masuk ke panel admin maka akan langsung diarahkan ke Login page kembali. <br/>
     - Untuk fiturnya sebagai berikut: <br/>
     ✅ <strong>Artikel:</strong> Admin bisa Create, Read, Update, Delete <br/>
     ✅ <strong>Kategori Artikel:</strong> Admin bisa Create, Read, Delete <br/>
     ✅ <strong>Video Edukasi:</strong> Admin bisa Create, Read, Update, Delete <br/>
     ✅ <strong>Pesan:</strong> Admin hanya bisa Read <br/>
+    ✅ <strong>Doctor:</strong> Admin bisa create Doctor Account, Read, Update, Delete <br/>
 </p>
 
 <img src="./Readme/video/video-4.gif" width="550"/>
