@@ -167,11 +167,23 @@ python mood-detection.py
 
 <p align="justify">
     🔹 <strong>Consultasion</strong> <br/>
-    Di fitur Consultation, user bisa menghubungi dokter untuk konsultasi kesehatan mental.
+    Di fitur Consultation, pengguna bisa menghubungi dokter untuk konsultasi kesehatan mental.
     Pengguna dapat terlebih dahulu memesan konsultasi kepada dokter, dan jika dokter sudah accept permintaan pengguna
     maka pengguna dapat berkonsultasi langsung dengan dokter<br/>
-    - <strong>NOTE: </strong> <br/>
+    - <strong>NOTE : </strong> <br/>
     Pengguna harus login terlebih dahulu sebelum bisa menggunakan fitur ini
 </p>
 
 <img src="./Readme/video/video-5.gif" width="550"/>
+
+<p align="justify">
+    🔹 <strong>Panel Doctor</strong> <br/>
+    - Untuk akun pengguna yang kami sediakan adalah: Email: william@gmail.com | Password: 123 <br/>
+    Di dalam Panel Doctor, Doctor bisa mengatur isi dari Consultations dan Profilenya. 
+    Panel Doctor juga dilengkapi sistem middleware Role, jadi jika user yang bukan doctor mencoba masuk ke panel doctor maka akan langsung diarahkan ke Login page kembali. <br/>
+    - Untuk fiturnya sebagai berikut: <br/>
+    ✅ <strong>Consultations:</strong> Doctor bisa Read, Update <br/>
+    ✅ <strong>Profile:</strong> Doctor bisa Read, Update <br/>
+</p>
+
+<img src="./Readme/video/video-6.gif" width="550"/>
