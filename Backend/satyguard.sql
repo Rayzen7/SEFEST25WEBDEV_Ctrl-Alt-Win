@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 10 Feb 2025 pada 14.37
+-- Waktu pembuatan: 17 Feb 2025 pada 04.13
 -- Versi server: 8.0.30
 -- Versi PHP: 8.3.11
 
@@ -119,6 +119,37 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `doctors`
+--
+
+CREATE TABLE `doctors` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `specialist` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_ktp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role_id` bigint UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `doctors`
+--
+
+INSERT INTO `doctors` (`id`, `name`, `image`, `email`, `specialist`, `desc`, `price`, `no_ktp`, `no_phone`, `password`, `role_id`, `created_at`, `updated_at`) VALUES
+(1, 'Dr. William Atmadja Sp.KJ', 'doctor/3opQceioIm8cBSDveXWFyuNf4ZWjSRbceUYXWOm4.png', 'william@gmail.com', 'Mental Health', 'Dr William is a leading specialist at ST Mary\'s Hospital in London. He has received several awards and recognitions for his contributions and service in his field. He is available for private consultations.', '50000', '68762688116', '+628126316817', '$2y$12$FDwJtSWWpY6e7ksZeFviceJgKMxDrzk6O5WJ3xNj.JrUDeBVQ3D2G', 3, '2025-02-14 11:48:00', '2025-02-16 02:23:19'),
+(2, 'Karina M.Psi', 'doctor/zMpGW9kRsplXOFpMi7QrS2iCpLnit3718TNhKngv.png', 'karina@gmail.com', 'Mental Health', 'Dr. Pricella is a top specialist and leading at ST Mary’s Hospital at London. She has achieved several awards and recognition for is contribution and service in her own field. She is available for private consultation. ', '50000', '87348947913', '+628127235782', '$2y$12$WM0n.wqc.LiH9x3qQzwW/erZi6CY8ybLFbElyixpc4T0BHBNcfswq', 3, '2025-02-16 02:07:32', '2025-02-16 02:07:32'),
+(4, 'Dr. Pricella Sp.KJ', 'doctor/pntcnKjdtdmK6q5fM23FWPPMEoIqiTTxBgQ15wOO.png', 'pricella@gmail.com', 'Mental Health', 'Dr. Pricella is a top specialist and leading at ST Mary’s Hospital at London. She has achieved several awards and recognition for is contribution and service in her own field. She is available for private consultation.', '50000', '257822379907', '+6281272397312', '$2y$12$d7J1NQ3Qx0yy94KpAdfLcObzNpurPBcsixmG7xiy6QV1yreub6WZK', 3, '2025-02-16 02:27:19', '2025-02-16 02:27:19');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `failed_jobs`
 --
 
@@ -217,7 +248,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2025_02_07_063216_create_articles_table', 4),
 (16, '2025_02_07_072408_create_article__categories_table', 5),
 (17, '2025_02_08_061221_create_messages_table', 6),
-(19, '2025_02_09_163422_create_videos_table', 7);
+(19, '2025_02_09_163422_create_videos_table', 7),
+(32, '2025_02_14_083106_create_doctors_table', 8),
+(33, '2025_02_14_100449_create_transactions_table', 8),
+(34, '2025_02_16_075948_transaction', 9);
 
 -- --------------------------------------------------------
 
@@ -238,13 +272,6 @@ CREATE TABLE `personal_access_tokens` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data untuk tabel `personal_access_tokens`
---
-
-INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
-(29, 'App\\Models\\User', 1, 'access_token', '4178f6a515a712fa7fb0fe360b487039d8530adedc9701b1d7f470bf5e9c2767', '[\"*\"]', NULL, NULL, '2025-02-10 07:21:56', '2025-02-10 07:21:56');
-
 -- --------------------------------------------------------
 
 --
@@ -264,7 +291,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'admin', NULL, NULL),
-(2, 'user', NULL, NULL);
+(2, 'user', NULL, NULL),
+(3, 'doctor', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -288,7 +316,40 @@ CREATE TABLE `sessions` (
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
 ('6Jpa4cJu8cRA7O0JxIhT9JqNLdBthy8LzIvwqZKy', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVWVPeWhrT05STzFSTVhtbmFiT0dzRmtEZVVWaDM1OUZoZmxSMG45YSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1739015197),
 ('faAqSOJYmFoEKDRJrYBIwycQXxrJuUDJl1htV9hs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiWFhLbEs1WkVacEk4SmN2ZkQzWEZnNlBhVWR3bXV4MGtuRjJsMEdSeiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1739037766),
+('HoDimu6nTayx9WiTs53ykcnPDrWPo5REoGOcKuKM', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicEhlSngxVEg5endrSVpxZlRXZUx4TVhyT0Z2ZFBBS1FuZHg2QTAxNyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1739521743),
+('iNIeeykTcuLSXYF8flMMAnVrbgebBVLSpwTALP32', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOGdUSkNOZXdKTVo5V3ZCYzhyd0JrWElXTjAyeUJTYmZPWG0zaVBSSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1739554504),
+('TiwlfWIoDQzCoZJWgNdli6cGkc6h7MwP0PTg0cWn', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTDZMZVNBMzNTcWhNTWVCRk1oTWtiOFZqNGNyS0lEWjVUZm9KYWhrdiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1739222986),
+('TJt80WanvL6yyQ3uCsNnNRN4MAoTVpm0a3REeTGT', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiMUl6b1ZxS2Vkc2MweENPU3VacFZqQm9aeWpWVXRCU0RwdjNpOFFvbiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1739763165),
 ('VOK59RtcsCRGbmmYezUPibK3SVT5iXd42H5WsEoC', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR2tsekI0Und4ZHV3NkN4a2NLbnJqV3hDUnVYa05LWmMwRzR4bHpMeiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1738994958);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `transactions`
+--
+
+CREATE TABLE `transactions` (
+  `id` bigint UNSIGNED NOT NULL,
+  `doctor_id` bigint UNSIGNED DEFAULT NULL,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `doctor_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `doctor_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `doctor_specialist` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `disease_complaints` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('pending','accepted') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `transactions`
+--
+
+INSERT INTO `transactions` (`id`, `doctor_id`, `user_id`, `doctor_name`, `user_name`, `doctor_image`, `doctor_specialist`, `disease_complaints`, `no_phone`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 3, 'Dr. William Atmadja Sp.KJ', 'user1', 'doctor/3opQceioIm8cBSDveXWFyuNf4ZWjSRbceUYXWOm4.png', 'Mental Health', 'I often feel anxious for no clear reason, and it makes it hard for me to focus on daily tasks. At night, I struggle to sleep because my mind keeps overthinking everything. Sometimes, I feel emotionally drained, even when nothing significant has happened. These feelings make me doubt myself and affect my overall well-being.', '+6281219538787', 'accepted', '2025-02-16 01:02:55', '2025-02-16 04:15:01'),
+(2, 2, 5, 'Karina M.Psi', 'user2', 'doctor/zMpGW9kRsplXOFpMi7QrS2iCpLnit3718TNhKngv.png', 'Mental Health', 'Lately, I’ve been feeling unmotivated and exhausted, even after a full night\'s sleep. Simple tasks feel overwhelming, and I find myself withdrawing from friends and family. My emotions fluctuate between sadness and frustration, and I don’t know how to explain it to others.', '+6281219538787', 'pending', '2025-02-16 02:46:10', '2025-02-16 02:46:10');
 
 -- --------------------------------------------------------
 
@@ -312,7 +373,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role_id`, `created_at`, `updated_at`) VALUES
 (1, 'admin1', 'admin1@gmail.com', '$2y$12$19cmRli5V2CV0oX0ENcpZu1/Wwxl3noVPTxYVQWrF4Gj29.KYGAvu', 1, '2025-02-07 00:06:25', '2025-02-07 00:06:25'),
-(3, 'user1', 'user1@gmail.com', '$2y$12$CQVp7TGKdqWmEFrTqnmNBefsVpwXCnALIA81y0X8fOzoYUiNupXKm', 2, '2025-02-07 23:31:59', '2025-02-07 23:31:59');
+(3, 'user1', 'user1@gmail.com', '$2y$12$CQVp7TGKdqWmEFrTqnmNBefsVpwXCnALIA81y0X8fOzoYUiNupXKm', 2, '2025-02-07 23:31:59', '2025-02-07 23:31:59'),
+(5, 'user2', 'user2@gmail.com', '$2y$12$5tNC2gj/I2ew4RAN3dt24eiZK5u3aeT4FzNEZVSXi/xHUwL56JY3K', 2, '2025-02-16 02:37:42', '2025-02-16 02:37:42');
 
 -- --------------------------------------------------------
 
@@ -374,6 +436,13 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `doctors`
+--
+ALTER TABLE `doctors`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `doctors_role_id_foreign` (`role_id`);
+
+--
 -- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -428,6 +497,14 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
+-- Indeks untuk tabel `transactions`
+--
+ALTER TABLE `transactions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `transactions_doctor_id_foreign` (`doctor_id`),
+  ADD KEY `transactions_user_id_foreign` (`user_id`);
+
+--
 -- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
@@ -449,13 +526,19 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT untuk tabel `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `doctors`
+--
+ALTER TABLE `doctors`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -473,37 +556,43 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT untuk tabel `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT untuk tabel `roles`
 --
 ALTER TABLE `roles`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `transactions`
+--
+ALTER TABLE `transactions`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -515,6 +604,19 @@ ALTER TABLE `videos`
 ALTER TABLE `article_categories`
   ADD CONSTRAINT `article_categories_article_id_foreign` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `article_categories_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `doctors`
+--
+ALTER TABLE `doctors`
+  ADD CONSTRAINT `doctors_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `transactions`
+--
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `transactions_doctor_id_foreign` FOREIGN KEY (`doctor_id`) REFERENCES `doctors` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `users`

@@ -109,35 +109,35 @@ const DoctorID = () => {
         <div className="pt-24">
           <img src={glow} alt="" className='absolute -z-20 w-[700px] h-auto top-[15%] left-1/2 -translate-x-1/2' />
           <div className="flex flex-col justify-center items-center">
-            <img src={`http://localhost:8000/storage/${doctor.image}`} alt="" className='w-[100px] h-[100px] rounded-full' />
+            <img src={`http://localhost:8000/storage/${doctor.image}`} alt="" className='lg:w-[100px] lg:h-[100px] w-[70px] h-[70px] rounded-full' />
             <div className="text-center">
-              <h1 className='font-poppins1 text-[28px] pt-4'>{doctor.name}</h1>
-              <p className='font-poppins2 text-[16px] pt-1'>Specialist {doctor.specialist}</p>
+              <h1 className='font-poppins1 text-[18px] lg:text-[28px] pt-4'>{doctor.name}</h1>
+              <p className='font-poppins2 text-[14px] lg:text-[16px] pt-1'>Specialist {doctor.specialist}</p>
             </div>
             <div className="flex justify-center items-center mt-4">
-              <img src={patients} className='w-[140px]' alt="" />
-              <img src={experience} className='w-[140px]' alt="" />
-              <img src={rating} className='w-[140px]' alt="" />
+              <img src={patients} className='lg:w-[140px] w-[80px]' alt="" />
+              <img src={experience} className='lg:w-[140px] w-[80px]' alt="" />
+              <img src={rating} className='lg:w-[140px] w-[80px]' alt="" />
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-start px-24 mt-8">
-          <div className="flex flex-col justify-center items-start gap-8 w-[600px]">
+        <div className="flex lg:flex-row flex-col justify-center lg:gap-0 gap-12 lg:justify-between items-start lg:px-24 px-10 mt-8">
+          <div className="flex flex-col justify-center items-start gap-8 lg:w-[600px] w-auto">
             <div className="flex flex-col gap-2 justify-center items-start">
-              <h1 className='font-poppins text-[26px]'>About Doctor</h1>
-              <p className='font-poppins2 text-justify'>{doctor.desc}</p>
+              <h1 className='font-poppins text-[24px] lg:text-[26px]'>About Doctor</h1>
+              <p className='font-poppins2 lg:text-[16px] text-[12px] text-justify'>{doctor.desc}</p>
             </div>
             <div className="flex flex-col justify-center items-start gap-2">
-              <h1 className='font-poppins text-[26px]'>Working Time</h1>
-              <p className='font-poppins2 text-justify'>Mon - Sat (08.30 AM - 09.00 PM)</p>
+              <h1 className='font-poppins text-[24px] lg:text-[26px]'>Working Time</h1>
+              <p className='font-poppins2 lg:text-[16px] text-[12px] text-justify'>Mon - Sat (08.30 AM - 09.00 PM)</p>
             </div>
             <div className="flex flex-col justify-center items-start gap-2">
-              <h1 className='font-poppins text-[26px]'>Price</h1>
+              <h1 className='font-poppins text-[24px] lg:text-[26px]'>Price</h1>
               <p className='font-poppins2 text-justify'>Rp. {rupiahFormat(doctor.price)}</p>
             </div>
           </div>
-          <div className="flex flex-col justify-center w-[400px] items-start gap-4">
-            <h1 className='font-poppins text-[26px]'>Communication</h1>
+          <div className="flex flex-col justify-center lg:w-[400px] w-auto items-start gap-4">
+            <h1 className='font-poppins text-[24px] lg:text-[26px]'>Communication</h1>
             <div className="flex flex-col justify-center items-start gap-8">
               <div className="flex justify-center gap-4 items-center">
                 <img src={icon1} alt="" />
@@ -172,12 +172,12 @@ const DoctorID = () => {
          </button>
         </div>
         <div className={`bg-[#00000072] w-full h-[150vh] flex justify-center items-center absolute transition-all duration-200 top-0 ${payment ? 'opacity-100 z-20' : 'opacity-0 -z-10'}`}>
-          <div className="bg-white w-[500px] h-[500px] rounded-lg flex flex-col justify-start p-12 items-center">
+          <div className="bg-white lg:w-[500px] lg:h-[500px] w-[330px] h-[450px] rounded-lg flex flex-col justify-start p-12 items-center">
             <div className="flex items-center w-full">
               <div className="flex-grow text-center">
-                <h1 className="font-poppins text-[28px]">Payment</h1>
+                <h1 className="font-poppins text-[24px] lg:text-[28px]">Payment</h1>
               </div>
-              <i onClick={() => setPayment(false)} className="bx bx-x font-poppins -mt-12 -mr-4 text-[32px] cursor-pointer"></i>
+              <i onClick={() => setPayment(false)} className="bx bx-x font-poppins -mt-12 -mr-6 lg:-mr-4 text-[28px] lg:text-[32px] cursor-pointer"></i>
             </div>
             <div className="mt-8 flex flex-col gap-5">
               <input 
@@ -185,7 +185,7 @@ const DoctorID = () => {
                 required
                 value={no_phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className='bg-[#DEDEDE] font-poppins1 text-[14px] border-none outline-none w-[400px] px-6 h-[50px] rounded-lg'
+                className='bg-[#DEDEDE] font-poppins1 text-[14px] border-none outline-none w-[270px] lg:w-[400px] px-6 h-[50px] rounded-lg'
                 placeholder='No. Phone'
               />
               <textarea 
@@ -193,11 +193,11 @@ const DoctorID = () => {
                 required
                 value={disease_complaints}
                 onChange={(e) => setDisease(e.target.value)}
-                className='bg-[#DEDEDE] font-poppins1 text-[14px] border-none outline-none pt-4 w-[400px] px-6 h-[120px] rounded-lg'
+                className='bg-[#DEDEDE] font-poppins1 text-[14px] border-none outline-none pt-4 w-[270px] lg:w-[400px] px-6 h-[120px] rounded-lg'
                 placeholder='Disease Complaints'
               />
             </div>
-            <button onClick={handleSubmit} className='mt-16 text-white bg-purple w-full font-poppins h-[55px] cursor-pointer transition-all duration-200 hover:bg-white hover:text-purple border-2 rounded-lg'>Book</button>
+            <button onClick={handleSubmit} className='lg:mt-16 mt-12 text-white bg-purple w-[270px] lg:w-full font-poppins h-[55px] cursor-pointer transition-all duration-200 hover:bg-white hover:text-purple border-2 rounded-lg'>Book</button>
           </div>
         </div>
         <ToastContainer/>
