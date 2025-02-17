@@ -21,6 +21,7 @@ SatyGuard adalah platform digital yang dirancang untuk memberikan perlindungan d
 - 😊 **Mood Detector**: Deteksi suasana hatimu secara instan dan dapatkan rekomendasi yang sesuai.  
 - 📰 **Article**: Baca berita dan wawasan terbaru seputar kesehatan mental.  
 - 🎥 **Video Edukatif**: Pelajari lebih lanjut tentang kesehatan mental melalui video informatif.  
+- 💬 **Konsultasi**: Dapatkan dukungan profesional untuk kesehatan mentalmu dengan ahli dokter terbaik.
 - 💡 **Fakta Menarik**: Temukan fakta unik dan bermanfaat tentang kesehatan mental.  
 
 ## 🗂️ ERD Database  
@@ -170,7 +171,7 @@ python mood-detection.py
 <img src="./Readme/video/video-4.gif" width="550"/>
 
 <p align="justify">
-    🔹 <strong>Consultasion</strong> <br/>
+    🔹 <strong>Consultations</strong> <br/>
     Di fitur Consultation, pengguna bisa menghubungi dokter untuk konsultasi kesehatan mental.
     Pengguna dapat terlebih dahulu memesan konsultasi kepada dokter, dan jika dokter sudah accept permintaan pengguna
     maka pengguna dapat berkonsultasi langsung dengan dokter<br/>
